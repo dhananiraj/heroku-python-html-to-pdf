@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
-path_wkhtmltopdf = r'/usr/local/bin/wkhtmltopdf'
+path_wkhtmltopdf = r'/app/bin/wkhtmltopdf'
 
 config = configuration(wkhtmltopdf=path_wkhtmltopdf)
 
