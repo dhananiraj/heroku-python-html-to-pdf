@@ -9,5 +9,8 @@
     {
       "url": "https://github.com/heroku/heroku-buildpack-python"
     }
-  ]
+  ],
+  "env": {
+    "key" : "he83jcaHHJAbndj*@!(jask732dbjckds"
+  }
 }
