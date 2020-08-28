@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0193b0502c25f396e817e9a6221a885949f1f41c58ea38617081c94b7e3535b9"
+            "sha256": "c8dce55248489cfdb1583711711c355eac504a2ec5d37802b2bad02b9e37e39d"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -102,6 +102,16 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.1.1"
+        },
+        "pdfkit": {
+            "hashes": [
+                "sha256:05f1c631e8d9ab877886955da825e48b459e097886a21448ab17b34c60cfd66c",
+                "sha256:6a866c9659e62a81abd72cdb32b400762d76085b964beb0b15106d573a539677",
+                "sha256:a315a665c266db28fb751891d0661fe5e750ced812cb4eadb3ce63afba9a7475",
+                "sha256:ef1da35b78d534197e7ce4a604a4a190e9aa769e56634957535f3479a50d8cd1"
+            ],
+            "index": "pypi",
+            "version": "==0.6.1"
         },
         "six": {
             "hashes": [

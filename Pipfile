@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 gunicorn = "*"
 flask-cors = "*"
+pdfkit = "*"
 
 [requires]
 python_version = "3.8"
