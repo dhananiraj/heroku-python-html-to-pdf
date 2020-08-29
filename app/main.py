@@ -23,9 +23,14 @@ def home_view():
 @app.route("/", methods=["POST"])
 def render_view():
     string = request.get_json()
-    # print(request, string)
-    # return "s"
     fn = random.randint(1000, 10000)
     from_string(string['data'],f"./app/pdfs/{fn}.pdf" ,configuration=config)
     return send_file(f"./pdfs/{fn}.pdf")
 
+
+@app.route("/from-url", methods=["POST"])
+def render_view():
+    string = request.get_json()
+    fn = random.randint(1000, 10000)
+    from_url(string['url'],f"./app/pdfs/{fn}.pdf" ,configuration=config)
+    return send_file(f"./pdfs/{fn}.pdf")
