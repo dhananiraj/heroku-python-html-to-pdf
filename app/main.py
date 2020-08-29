@@ -9,7 +9,16 @@ CORS(app)
 # path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
 path_wkhtmltopdf = r'/app/bin/wkhtmltopdf'
 
-config = configuration(wkhtmltopdf=path_wkhtmltopdf)
+config = configuration(wkhtmltopdf=path_wkhtmltopdf,options = {
+    'page-size': 'A4',
+    'margin-top': '0.75in',
+    'margin-right': '0.1in',
+    'margin-bottom': '0.75in',
+    'margin-left': '0.1in',
+    'encoding': "UTF-8",
+    'no-outline': None
+}
+)
 
 @app.route("/", methods=["GET"])
 def home_view():
