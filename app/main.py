@@ -9,21 +9,7 @@ CORS(app)
 # path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
 path_wkhtmltopdf = r'/app/bin/wkhtmltopdf'
 
-config = configuration(wkhtmltopdf=path_wkhtmltopdf,options = {
-    'page-size': 'Letter',
-    'margin-top': '0.75in',
-    'margin-right': '0.3in',
-    'margin-bottom': '0.75in',
-    'margin-left': '0.3in',
-    'encoding': "UTF-8",
-    'custom-header' : [('Accept-Encoding', 'gzip')],
-    'cookie': [
-        ('cookie-name1', 'cookie-value1'),
-        ('cookie-name2', 'cookie-value2'),
-    ],
-    'no-outline': None
-}
-)
+config = configuration(wkhtmltopdf=path_wkhtmltopdf)
 
 @app.route("/", methods=["GET"])
 def home_view():
@@ -38,7 +24,21 @@ def home_view():
 def render_view():
     string = request.get_json()
     fn = random.randint(1000, 10000)
-    from_string(string['data'].replace(',','').replace('undefined',''),f"./app/pdfs/{fn}.pdf" ,configuration=config)
+    options = {
+        'page-size': 'Letter',
+        'margin-top': '0.75in',
+        'margin-right': '0.3in',
+        'margin-bottom': '0.75in',
+        'margin-left': '0.3in',
+        'encoding': "UTF-8",
+        'custom-header': [('Accept-Encoding', 'gzip')],
+        'cookie': [
+            ('cookie-name1', 'cookie-value1'),
+            ('cookie-name2', 'cookie-value2'),
+        ],
+        'no-outline': None
+    }
+    from_string(string['data'].replace(',','').replace('undefined',''),f"./app/pdfs/{fn}.pdf" ,configuration=config,options=options)
     return send_file(f"./pdfs/{fn}.pdf")
 
 
