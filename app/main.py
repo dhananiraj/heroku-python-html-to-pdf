@@ -25,11 +25,11 @@ def render_view():
     string = request.get_json()
     fn = random.randint(1000, 10000)
     options = {
-        'page-size': 'Letter',
-        'margin-top': '0.75in',
-        'margin-right': '0.3in',
-        'margin-bottom': '0.75in',
-        'margin-left': '0.3in',
+        'page-size': 'A4',
+        'margin-top': '0.0in',
+        'margin-right': '0.0in',
+        'margin-bottom': '0.0in',
+        'margin-left': '0.0in',
         'encoding': "UTF-8",
         'custom-header': [('Accept-Encoding', 'gzip')],
         'cookie': [
