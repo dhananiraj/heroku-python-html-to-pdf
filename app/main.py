@@ -24,7 +24,7 @@ def home_view():
 def render_view():
     string = request.get_json()
     fn = random.randint(1000, 10000)
-    from_string(string['data'],f"./app/pdfs/{fn}.pdf" ,configuration=config)
+    from_string(string['data'].replace(',','').replace('undefined',''),f"./app/pdfs/{fn}.pdf" ,configuration=config)
     return send_file(f"./pdfs/{fn}.pdf")
 
 
