@@ -29,7 +29,7 @@ def render_view():
 
 
 @app.route("/from-url", methods=["POST"])
-def render_view():
+def render_view_from_url():
     string = request.get_json()
     fn = random.randint(1000, 10000)
     from_url(string['url'],f"./app/pdfs/{fn}.pdf" ,configuration=config)
